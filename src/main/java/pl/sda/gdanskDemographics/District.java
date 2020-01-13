@@ -23,6 +23,39 @@ public class District {
         this.ageAboveSixtyFour = ageAboveSixtyFour;
     }
 
+    public String getDistrictName() {
+        return districtName;
+    }
 
+    public String getGender() {
+        return gender;
+    }
 
+    public Integer getAgeUnderEighteen() {
+        return ageUnderEighteen;
+    }
+
+    public Integer getAgeFromEighteenAndFiftyNine() {
+        return ageFromEighteenAndFiftyNine;
+    }
+
+    public Integer getAgeFromSixtyAndSixtyFour() {
+        return ageFromSixtyAndSixtyFour;
+    }
+
+    public Integer getAgeAboveSixtyFour() {
+        return ageAboveSixtyFour;
+    }
+
+    @Override
+    public String toString() {
+        return "District{" +
+                "districtName=" + districtName + '\'' +
+                ", gender=" + gender + '\'' +
+                ", ageUnderEighteen=" + ageUnderEighteen +
+                ", ageFromEighteenAndFiftyNine=" + ageFromEighteenAndFiftyNine +
+                ", ageFromSixtyAndSixtyFour=" + ageFromSixtyAndSixtyFour +
+                ", ageAboveSixtyFour=" + ageAboveSixtyFour +
+                '}';
+    }
 }
