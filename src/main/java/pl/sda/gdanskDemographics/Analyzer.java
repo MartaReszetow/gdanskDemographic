@@ -35,7 +35,6 @@ public class Analyzer {
                 }
                 if (singleDistrict.getAgeFromEighteenAndFiftyNine() > max.getAgeFromEighteenAndFiftyNine()) {
                     max = singleDistrict;
-
                 }
             } else if (age < 64) {
                 if (max == null) {
@@ -43,21 +42,15 @@ public class Analyzer {
                 }
                 if (singleDistrict.getAgeFromSixtyAndSixtyFour() > max.getAgeFromSixtyAndSixtyFour()) {
                     max = singleDistrict;
-
                 }
             } else {
-
                 if (max == null) {
                     max = singleDistrict;
                 }
                 if (singleDistrict.getAgeFromSixtyAndSixtyFour() > max.getAgeFromSixtyAndSixtyFour()) {
                     max = singleDistrict;
-
-
                 }
-
             }
-
         }
         return max;
     }
@@ -75,7 +68,32 @@ public class Analyzer {
         }
         return genderTable;
     }
+
+    //metodę obliczającą w której dzielnicy jest najwięcej mieszkańców danej płci
+    public int sumOfDistrictPopulation(District district) {
+
+        return district.getAgeUnderEighteen()+
+                district.getAgeFromEighteenAndFiftyNine()+
+                district.getAgeFromEighteenAndFiftyNine()+
+                district.getAgeAboveSixtyFour();
+    }
+
+
+    public District maxNumberOfInhabitants(String gender) {
+
+        int maxPopulationAmongGender = 0;
+        District districtWithMaxPopulation = null;
+        for (District singleDistrict : getTablebyGender(gender))
+              if (sumOfDistrictPopulation(singleDistrict) > maxPopulationAmongGender) {
+                maxPopulationAmongGender = sumOfDistrictPopulation(singleDistrict);
+                districtWithMaxPopulation = singleDistrict;
+                            }
+        return districtWithMaxPopulation;
+    }
+
 }
+
+
 
 
 
